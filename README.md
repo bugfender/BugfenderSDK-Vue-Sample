@@ -60,7 +60,7 @@ Vue.js registers a global error handler that overrides Bugfenders default global
       Bugfender.sendCrash('Error: ' + msg, ' VUE Error:' + trace);
     } 
 
-- [See Vue documentation](https://vuejs.org/v2/api/#errorHandler).
+- [See Vue documentation](https://vuejs.org/api/application.html#app-config-errorhandler).
 
 ## More information
 
