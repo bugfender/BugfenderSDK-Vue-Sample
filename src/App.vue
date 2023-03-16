@@ -3,7 +3,7 @@ import { Bugfender } from '@bugfender/sdk'
 import Button from './components/Button.vue'
 
 function printLog(): void {
-  Bugfender.log('Hello Vue!');
+  Bugfender.log('Hello Vue!')
 }
 
 async function showFeedback(): Promise<void> {
@@ -12,8 +12,12 @@ async function showFeedback(): Promise<void> {
   });
 
   if (result.isSent) {
-    Bugfender.log(`Feedback sent! This is the URL: ${result.feedbackURL}`);
+    Bugfender.log(`Feedback sent! This is the URL: ${result.feedbackURL}`)
   }
+}
+
+function generateError(): void {
+  throw new Error('Unhandled error from App.vue')
 }
 </script>
 
@@ -26,6 +30,7 @@ async function showFeedback(): Promise<void> {
       </div>
       <Button @click="printLog">Log</Button>
       <Button @click="showFeedback">Show Feedback</Button>
+      <Button @click="generateError">Generate Error</Button>
       <p>You can find <code>@bugfender/sdk</code> <strong>API reference</strong> here: <a href="https://js.bugfender.com" target="_blank">https://js.bugfender.com</a></p>
   </main>
 </template>
